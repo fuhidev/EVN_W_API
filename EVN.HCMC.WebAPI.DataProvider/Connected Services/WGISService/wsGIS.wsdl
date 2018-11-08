@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CheckUserUngDung">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pTenUngdung" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserUngDungResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckUserUngDungResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPhanQuyen">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pTenUngdung" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPhanQuyenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPhanQuyenResult" type="tns:PhanQuyen" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PhanQuyen">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Read" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Create" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Update" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Delete" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Enable" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="DonVi" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckUserOutlook">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserOutlookResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckUserOutlookResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsAccountOutlookResult">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsAccountOutlookResultResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsAccountOutlookResultResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckUserUngDungSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckUserUngDung" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserUngDungSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckUserUngDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPhanQuyenSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPhanQuyen" />
+  </wsdl:message>
+  <wsdl:message name="CheckPhanQuyenSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPhanQuyenResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserOutlookSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckUserOutlook" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserOutlookSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckUserOutlookResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsAccountOutlookResultSoapIn">
+    <wsdl:part name="parameters" element="tns:IsAccountOutlookResult" />
+  </wsdl:message>
+  <wsdl:message name="IsAccountOutlookResultSoapOut">
+    <wsdl:part name="parameters" element="tns:IsAccountOutlookResultResponse" />
+  </wsdl:message>
+  <wsdl:portType name="wsGISSoap">
+    <wsdl:operation name="CheckUserUngDung">
+      <wsdl:input message="tns:CheckUserUngDungSoapIn" />
+      <wsdl:output message="tns:CheckUserUngDungSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPhanQuyen">
+      <wsdl:input message="tns:CheckPhanQuyenSoapIn" />
+      <wsdl:output message="tns:CheckPhanQuyenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserOutlook">
+      <wsdl:input message="tns:CheckUserOutlookSoapIn" />
+      <wsdl:output message="tns:CheckUserOutlookSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsAccountOutlookResult">
+      <wsdl:input message="tns:IsAccountOutlookResultSoapIn" />
+      <wsdl:output message="tns:IsAccountOutlookResultSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="wsGISSoap" type="tns:wsGISSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckUserUngDung">
+      <soap:operation soapAction="http://tempuri.org/CheckUserUngDung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPhanQuyen">
+      <soap:operation soapAction="http://tempuri.org/CheckPhanQuyen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserOutlook">
+      <soap:operation soapAction="http://tempuri.org/CheckUserOutlook" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAccountOutlookResult">
+      <soap:operation soapAction="http://tempuri.org/IsAccountOutlookResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="wsGISSoap12" type="tns:wsGISSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckUserUngDung">
+      <soap12:operation soapAction="http://tempuri.org/CheckUserUngDung" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPhanQuyen">
+      <soap12:operation soapAction="http://tempuri.org/CheckPhanQuyen" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserOutlook">
+      <soap12:operation soapAction="http://tempuri.org/CheckUserOutlook" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsAccountOutlookResult">
+      <soap12:operation soapAction="http://tempuri.org/IsAccountOutlookResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="wsGIS">
+    <wsdl:port name="wsGISSoap" binding="tns:wsGISSoap">
+      <soap:address location="https://ktlddr.hcmpc.com.vn/WSGisApp/wsGIS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="wsGISSoap12" binding="tns:wsGISSoap12">
+      <soap12:address location="https://ktlddr.hcmpc.com.vn/WSGisApp/wsGIS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
