@@ -16,48 +16,41 @@ namespace EVN.HCMC.WebAPI.DataProvider.Manager
                 var result = new List<MapCollectionItem>();
 
                 // kiểm tra lưới điện
-                //var resKTLD = service.CheckPhanQuyen(pUsername, Application.KTLD);
-                var resKTLD = new WGISService.PhanQuyen
-                {
-                    Create = true,Delete=true,DonVi="GISGOVAP",Enable=true,Read=true,Update=true
-                };
+                var resKTLD = service.CheckPhanQuyen(pUsername, Application.KTLD);
                 if (resKTLD != null)
                 {
-                    result.Add(new MapCollectionItem
-                    {
-                        ID = this.GenerateID(Application.KTLD, resKTLD),
-                        Name = "Bản đồ kiểm tra lưới điện - " + resKTLD.DonVi
-                    });
+                    var id = this.GenerateID(Application.KTLD, resKTLD);
+                    if (!String.IsNullOrEmpty(id))
+                        result.Add(new MapCollectionItem
+                        {
+                            ID = id,
+                            Name = "Bản đồ kiểm tra lưới điện - " + resKTLD.DonVi
+                        });
                 }
 
                 // kiểm tra trạm biến áp
-                //var resKTBA = service.CheckPhanQuyen(pUsername, Application.KTBA);
-                var resKTBA = new WGISService.PhanQuyen
-                {
-                    Create = true,
-                    Delete = true,
-                    DonVi = "GISGOVAP",
-                    Enable = true,
-                    Read = true,
-                    Update = true
-                };
+                var resKTBA = service.CheckPhanQuyen(pUsername, Application.KTBA);
                 if (resKTBA != null)
                 {
-                    result.Add(new MapCollectionItem
-                    {
-                        ID = this.GenerateID(Application.KTBA, resKTBA),
-                        Name = "Bản đồ kiểm tra trạm biến áp - " + resKTBA.DonVi
-                    });
+                    var id = this.GenerateID(Application.KTBA, resKTBA);
+                    if (!String.IsNullOrEmpty(id))
+                        result.Add(new MapCollectionItem
+                        {
+                            ID = id,
+                            Name = "Bản đồ kiểm tra trạm biến áp"
+                        });
                 }
                 // kiểm tra đường dây
                 var resKTDD = service.CheckPhanQuyen(pUsername, Application.KTDD);
                 if (resKTDD != null)
                 {
-                    result.Add(new MapCollectionItem
-                    {
-                        ID = this.GenerateID(Application.KTDD, resKTDD),
-                        Name = "Bản đồ kiểm tra đường dây - " + resKTDD.DonVi
-                    });
+                    var id = this.GenerateID(Application.KTDD, resKTDD);
+                    if (!String.IsNullOrEmpty(id))
+                        result.Add(new MapCollectionItem
+                        {
+                            ID = id,
+                            Name = "Bản đồ kiểm tra đường dây" 
+                        });
                 }
 
                 return result;

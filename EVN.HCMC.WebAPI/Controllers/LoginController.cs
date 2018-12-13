@@ -16,8 +16,8 @@ namespace EVN.HCMC.WebAPI.Controllers
 
         private AccountDB context = new AccountDB();
 
-        [HttpPost]
-        public HttpResponseMessage Authenticate([FromBody] LoginRequest login)
+        [Route("")]
+        public HttpResponseMessage Post([FromBody] LoginRequest login)
         {
             var loginResponse = new LoginResponse { };
 

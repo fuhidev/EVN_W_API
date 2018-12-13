@@ -8,7 +8,7 @@ namespace EVN.HCMC.WebAPI.DataProvider.Manager
 {
     public class AccountDB
     {
-        public Boolean IsValid(string pUsername,string pPassword)
+        public Boolean IsValid(string pUsername, string pPassword)
         {
             using (var service = new WGISService.wsGISSoapClient())
             {
