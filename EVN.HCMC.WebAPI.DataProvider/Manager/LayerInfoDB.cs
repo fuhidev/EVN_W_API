@@ -29,7 +29,7 @@ namespace EVN.HCMC.WebAPI.DataProvider.Manager
                             {
                                 LayerID = "thamchieunen_h_cacheMS",
                                 LayerTitle = "Bản đồ nền",
-                                Url = "https://prgrd.hcmpc.com.vn/arcgis/rest/services/" + branchName + "/ThamChieuNen_H_Cache/MapServer"
+                                Url = "https://prgrd.evnhcmc.vn/arcgis/rest/services/" + branchName + "/ThamChieuNen_H_Cache/MapServer"
                             });
 
 
@@ -37,40 +37,40 @@ namespace EVN.HCMC.WebAPI.DataProvider.Manager
                             {
                                 LayerID = "luoidienhthMS",
                                 LayerTitle = "Bản đồ nền Lưới điện hạ thế",
-                                Url = "https://prgrd.hcmpc.com.vn/arcgis/rest/services/" + branchName + "/LuoiDien_HT_H/MapServer"
+                                Url = "https://prgrd.evnhcmc.vn/arcgis/rest/services/" + branchName + "/LuoiDien_HT_H/MapServer"
                             });
 
                             layerInfos.Add(new LayerInfo
                             {
                                 LayerID = "ldtthMS",
                                 LayerTitle = "Bản đồ nền Lưới điện Trung thế",
-                                Url = "https://prgrd.hcmpc.com.vn/arcgis/rest/services/" + branchName + "/LuoiDien_TT_H/MapServer"
+                                Url = "https://prgrd.evnhcmc.vn/arcgis/rest/services/" + branchName + "/LuoiDien_TT_H/MapServer"
                             });
 
                             layerInfos.Add(new LayerInfo
                             {
                                 LayerID = "luoidienkthktdttLYR",
                                 LayerTitle = "Kiểm tra Dây thông tin",
-                                Url = "https://prgrd.hcmpc.com.vn/arcgis/rest/services/" + branchName + "/LuoiDien_KT_H/FeatureServer/3"
+                                Url = "https://prgrd.evnhcmc.vn/arcgis/rest/services/" + branchName + "/LuoiDien_KT_H/FeatureServer/3"
                             });
 
                             layerInfos.Add(new LayerInfo
                             {
                                 LayerID = "luoidienkthktldttLYR",
                                 LayerTitle = "Kiểm tra Lưới điện Trung thế",
-                                Url = "https://prgrd.hcmpc.com.vn/arcgis/rest/services/" + branchName + "/LuoiDien_KT_H/FeatureServer/0",
+                                Url = "https://prgrd.evnhcmc.vn/arcgis/rest/services/" + branchName + "/LuoiDien_KT_H/FeatureServer/0",
                             });
                             layerInfos.Add(new LayerInfo
                             {
                                 LayerID = "luoidienkthktldhtLYR",
                                 LayerTitle = "Kiểm tra Lưới điện Hạ thế",
-                                Url = "https://prgrd.hcmpc.com.vn/arcgis/rest/services/" + branchName + "/LuoiDien_KT_H/FeatureServer/1"
+                                Url = "https://prgrd.evnhcmc.vn/arcgis/rest/services/" + branchName + "/LuoiDien_KT_H/FeatureServer/1"
                             });
                             layerInfos.Add(new LayerInfo
                             {
                                 LayerID = "luoidienkthkttbtLYR",
                                 LayerTitle = "Kiểm tra Trạm biến thế",
-                                Url = "https://prgrd.hcmpc.com.vn/arcgis/rest/services/" + branchName + "/LuoiDien_KT_H/FeatureServer/2"
+                                Url = "https://prgrd.evnhcmc.vn/arcgis/rest/services/" + branchName + "/LuoiDien_KT_H/FeatureServer/2"
                             });
 
                             // cập nhật quyền

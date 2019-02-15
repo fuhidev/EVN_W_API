@@ -104,6 +104,9 @@ namespace EVN.HCMC.WebAPI.DataProvider
             else if (id == "X")
             {
                 name = "THUTHIEM";
+            } else if (id == "I")
+            {
+                name = "GOVAP";
             }
             return "GIS" + name;
         }
